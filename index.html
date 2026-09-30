@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coleta Seletiva - Jardinópolis SP</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; color: #333; background-color: #8ed24d; }
+        .container { max-width: 600px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        h2 { color: #28a745; text-align: center; }
+        label { font-weight: bold; display: block; margin-top: 15px; }
+        select, button { padding: 12px; margin: 8px 0; display: block; width: 100%; border-radius: 5px; border: 1px solid #ccc; font-size: 16px; box-sizing: border-box; }
+        button { background-color: #28a745; color: white; cursor: pointer; font-weight: bold; border: none; transition: background 0.2s; }
+        button:hover { background-color: #218838; }
+        .mapa-container { margin-top: 20px; display: none; text-align: center; }
+        #nomeDoPonto { font-weight: bold; font-size: 18px; color: #555; margin-bottom: 10px; }
+        /* Garante que o iframe fique responsivo no celular */
+        .video-responsive { overflow: hidden; padding-bottom: 56.25%; position: relative; height: 0; border-radius: 8px; border: 1px solid #ddd; }
+        .video-responsive iframe { left: 0; top: 0; height: 100%; width: 100%; position: absolute; border: 0; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Recicla Jardinópolis</h2>
+        <p style="text-align: center; color: #666;">Selecione seu bairro e o material para descartar corretamente.</p>
+
+        <label>1. Em qual bairro você está?</label>
+        <select id="bairroUsuario">
+            <option value="centro">Centro</option>
+            <option value="vila_paulista">Vila Paulista</option>
+            <option value="morada_sol">Morada do Sol</option>
+            <option value="industrial">Distrito Industrial</option>
+        </select>
+
+        <label>2. O que você deseja descartar?</label>
+        <select id="tipoLixo">
+            <option value="eletronico">Lixo Eletrônico / Pilhas</option>
+            <option value="oleo">Óleo de Cozinha Usado</option>
+            <option value="reciclavel">Recicláveis (Plástico/Papel/Vidro)</option>
+        </select>
+
+        <button onclick="buscarPontoColeta()">Encontrar Ponto de Coleta</button>
+
+        <!-- Área do Mapa -->
+        <div id="mapaContainer" class="mapa-container">
+            <div id="nomeDoPonto"></div>
+            <div class="video-responsive" id="espacoDoIframe"></div>
+        </div>
+    </div>
+
+    <script>
+        // Banco de dados relacionando o bairro de Jardinópolis + material ao iframe específico
+        const pontosJardinopolis = {
+            "centro": {
+                "eletronico": {
+                    nome: "Ecoponto Central - Próximo à Praça da Matriz",
+                    // SUBSTITUA TODO ESSE IFRAME PELO SEU DO GOOGLE MAPS
+                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14881.756915211645!2d-47.790899950000004!3d-21.1747037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b9be4b8b4f7655%3A0x55f4db2c3ad5f7a1!2sHospital%20Santa%20Casa%20de%20Miseric%C3%B3rdia%20de%20Ribeir%C3%A3o%20Preto!5e0!3m2!1spt-BR!2sbr!4v1790729918861!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>'
+                },
+                "oleo": {
+                    nome: "Supermercado Parceiro do Centro (Coleta de Óleo)",
+                    iframe: '<iframe src="https://google.com" loading="lazy"></iframe>'
+                },
+                "reciclavel": {
+                    nome: "PEV - Ponto de Entrega Voluntária Centro",
+                    iframe: '<iframe src="https://google.com" loading="lazy"></iframe>'
+                }
+            },
+            "vila_paulista": {
+                "eletronico": {
+                    nome: "Ecoponto Central - Próximo à Praça da Matriz (Atende a Vila Paulista)",
+                    // Como a cidade é pequena, você pode repetir o mesmo iframe do Centro aqui!
+                    iframe: '<iframe src="https://google.com" loading="lazy"></iframe>'
+                },
+                "oleo": {
+                    nome: "Posto de Combustível Vila Paulista",
+                    iframe: '<iframe src="https://google.com" loading="lazy"></iframe>'
+                },
+                "reciclavel": {
+                    nome: "Barracão da Reciclagem Municipal",
+                    iframe: '<iframe src="https://google.com" loading="lazy"></iframe>'
+                }
+            }
+            // Você pode adicionar "morada_sol" e "industrial" seguindo a mesma estrutura acima...
+        };
+
+        function buscarPontoColeta() {
+            const bairro = document.getElementById("bairroUsuario").value;
+            const lixo = document.getElementById("tipoLixo").value;
+
+            const ponto = pontosJardinopolis[bairro]?.[lixo];
+
+            if (ponto) {
+                document.getElementById("nomeDoPonto").innerHTML = `📍 <strong>${ponto.nome}</strong>`;
+                document.getElementById("espacoDoIframe").innerHTML = ponto.iframe;
+                document.getElementById("mapaContainer").style.display = "block";
+            } else {
+                alert("Ainda estamos cadastrando os pontos para esta região. Tente outra combinação!");
+            }
+        }
+    </script>
+
+</body>
+</html>
