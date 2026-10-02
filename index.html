@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#8ed24d">
   <title>Descarte correto em Jardinópolis — Onde Levo?</title>
   <meta name="description" content="Descubra onde descartar pilhas, eletrônicos, remédios, lâmpadas, óleo, móveis e recicláveis em Jardinópolis SP.">
   <!-- Ícone da aba: troque por img/favicon.png quando tiver o arquivo -->
@@ -13,27 +14,39 @@
 </head>
 <body>
   <header class="topo" id="topo"></header>
-  <main>
+  <main id="conteudo">
     <section class="hero"><div class="wrap">
       <h1>Onde descartar?</h1>
       <p>Escolha o que você quer descartar e onde mora.</p>
     </div></section>
     <div class="wrap">
-      <form class="busca" id="form-busca"><div class="campos">
-        <div><label for="material">O que você quer descartar?</label><select id="material"></select></div>
-        <div><label for="bairro">Seu bairro</label><select id="bairro"></select></div>
-        <button class="btn" type="submit">Ver pontos de coleta</button>
-      </div></form>
+      <form class="busca" id="form-busca" novalidate>
+        <div class="campos">
+          <div><label for="material">O que você quer descartar?</label><select id="material"></select></div>
+          <div class="combo">
+            <label for="bairro">Seu bairro <span class="opc">(opcional)</span></label>
+            <input id="bairro" type="text" role="combobox" aria-expanded="false" aria-controls="bairro-lista" aria-autocomplete="list" aria-describedby="bairro-msg" autocomplete="off" enterkeyhint="search" placeholder="Digite parte do nome. Ex.: regina">
+            <ul id="bairro-lista" role="listbox" aria-label="Bairros de Jardinópolis" hidden></ul>
+          </div>
+          <button class="btn" type="submit">Ver pontos de coleta</button>
+        </div>
+        <p id="bairro-msg" class="erro" role="alert"></p>
+        <details class="ajuda">
+          <summary>Não sabe qual é o seu bairro?</summary>
+          <p>Procure a sua rua no mapa oficial dos bairros. Dica: no campo acima, digite só uma parte do nome (por exemplo, "regina" encontra Jardim Maria Regina).</p>
+          <div class="mapa alto"><iframe title="Mapa dos bairros de Jardinópolis" src="https://www.google.com/maps/d/embed?mid=1BiuJjVLuWMzhzfK3FzYZov7s8RPPJnCj&ehbc=2E312F" loading="lazy"></iframe></div>
+        </details>
+      </form>
       <div id="resultado" hidden aria-live="polite"></div>
     </div>
     <section class="aprender"><div class="wrap">
       <h2>Por que descartar certo?</h2>
       <p class="sub">Lixo no lugar errado afeta a saúde e o bolso de todo mundo.</p>
       <div class="grade">
-        <article class="tema"><span class="ico">🌊</span><div><h3>Enchentes</h3><p>Lixo entope bueiros e alaga ruas.</p></div><a href="impactos.html#enchentes">Entenda mais sobre</a></article>
-        <article class="tema"><span class="ico">🦟</span><div><h3>Dengue e pragas</h3><p>Terrenos sujos juntam água parada.</p></div><a href="impactos.html#pragas">Entenda mais sobre</a></article>
-        <article class="tema"><span class="ico">☠️</span><div><h3>Contaminação</h3><p>Pilhas, óleo e remédios poluem solo e rios.</p></div><a href="impactos.html#contaminacao">Entenda mais sobre</a></article>
-        <article class="tema"><span class="ico">💻</span><div><h3>Lixo eletrônico</h3><p>Aparelhos velhos guardam metais valiosos e tóxicos.</p></div><a href="impactos.html#eletronicos">Entenda mais sobre</a></article>
+        <article class="tema"><img class="ico" src="img/icone-enchente.png" alt="" width="48" height="48"><div><h3>Enchentes</h3><p>Lixo entope bueiros e alaga ruas.</p></div><a href="impactos.html#enchentes">Entenda mais sobre<span class="sr"> enchentes</span></a></article>
+        <article class="tema"><img class="ico" src="img/icone-dengue.png" alt="" width="48" height="48"><div><h3>Dengue e pragas</h3><p>Terrenos sujos juntam água parada.</p></div><a href="impactos.html#pragas">Entenda mais sobre<span class="sr"> dengue e pragas</span></a></article>
+        <article class="tema"><img class="ico" src="img/icone-contaminacao.png" alt="" width="48" height="48"><div><h3>Contaminação</h3><p>Pilhas, óleo e remédios poluem solo e rios.</p></div><a href="impactos.html#contaminacao">Entenda mais sobre<span class="sr"> contaminação</span></a></article>
+        <article class="tema"><img class="ico" src="img/icone-eletronico.png" alt="" width="48" height="48"><div><h3>Lixo eletrônico</h3><p>Aparelhos velhos guardam metais valiosos e tóxicos.</p></div><a href="impactos.html#eletronicos">Entenda mais sobre<span class="sr"> lixo eletrônico</span></a></article>
       </div>
       <p style="margin-top:20px"><a href="guia.html">Ver o guia de descarte de cada material</a></p>
     </div></section>

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#8ed24d">
   <title>Sobre — Onde Levo?</title>
   <meta name="description" content="Descubra onde descartar pilhas, eletrônicos, remédios, lâmpadas, óleo, móveis e recicláveis em Jardinópolis SP.">
   <!-- Ícone da aba: troque por img/favicon.png quando tiver o arquivo -->
@@ -13,28 +14,34 @@
 </head>
 <body>
   <header class="topo" id="topo"></header>
-  <main class="pagina"><div class="wrap">
-    <h1>Sobre o <h1 class="verde">Onde Levo?</h1></h1>
+  <main class="pagina" id="conteudo"><div class="wrap">
+    <h1>Sobre o <span class="verde">Onde Levo?</span></h1>
     <p class="lead">Um portal público e gratuito que ajuda os moradores de Jardinópolis a descobrir onde descartar corretamente seus resíduos.</p>
     <h2>O problema</h2>
-    <p>Muita gente não sabe onde levar pilhas, eletrônicos, remédios, lâmpadas, móveis ou óleo de cozinha. O resultado é descarte em ruas, terrenos baldios e cursos d'água.</p>
-    <h2>O que o portal faz</h2>
-    <p>Você escolhe o material e o bairro, e o sistema mostra os pontos de coleta com horário e mapa. Também traz dicas de descarte seguro e conteúdo sobre os impactos do lixo no lugar errado.</p>
+    <p>Muita gente não sabe onde levar pilhas, eletrônicos, remédios, lâmpadas, móveis ou óleo de cozinha. O resultado é descarte em ruas, terrenos baldios e cursos d'água, com mais enchentes, pragas e contaminação.</p>
+    <h2>Como usar</h2>
+    <ol class="passos"><li>Escolha o que você quer descartar.</li><li>Digite o seu bairro (ou deixe em branco para ver todos os pontos).</li><li>Veja o endereço, o horário e o mapa do ponto de coleta.</li></ol>
     <h2>Parceiros</h2>
     <div class="parceiros">
       <div class="cartao"><img src="img/logo-instituto-kaio-martins.jpg" alt=""><div><h3>Instituto Kaio Martins</h3><p>[descreva o papel do instituto]</p></div></div>
-      <div class="cartao"><img src="img/logo-COOPAA-Cooperativa-de-Trabalho-de-Materiais-Recicláveis-Atitude-Ambiental-de-Jardinópolis-e-Região copy.jpg" alt=""><div><h3>COOPAA</h3><p>[descreva a parceria, quando confirmada]</p></div></div>
+      <div class="cartao"><img src="img/logo-coopaa.jpg" alt=""><div><h3>COOPAA</h3><p>[descreva a parceria, quando confirmada]</p></div></div>
     </div>
+    <h2>Conhece um ponto de coleta?</h2>
+    <p>Se você tem um comércio, escola ou entidade que recebe algum material, ou conhece um ponto que ainda não está no site, entre em contato: [inserir e-mail ou WhatsApp].</p>
     <h2>Objetivos de Desenvolvimento Sustentável</h2>
     <p><strong>ODS 11:</strong> cidades e comunidades sustentáveis.<br><strong>ODS 12:</strong> consumo e produção responsáveis.</p>
     <h2 id="fontes">Fontes e referências</h2>
     <ol class="fontes">
-      <li>Lei nº 12.305/2010 (PNRS). <a href="https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/lei/l12305.htm" target="_blank" rel="noopener">planalto.gov.br</a></li>
-      <li>Global E-waste Monitor 2024. <a href="https://ewastemonitor.info/" target="_blank" rel="noopener">ewastemonitor.info</a></li>
-      <li>ABRELPE, Panorama dos Resíduos Sólidos. <a href="https://abrelpe.org.br/panorama/" target="_blank" rel="noopener">abrelpe.org.br</a></li>
-      <li>ONU Brasil, ODS 11. <a href="https://brasil.un.org/pt-br/sdgs/11" target="_blank" rel="noopener">brasil.un.org</a></li>
-      <li>ONU Brasil, ODS 12. <a href="https://brasil.un.org/pt-br/sdgs/12" target="_blank" rel="noopener">brasil.un.org</a></li>
-      <li>Ministério da Saúde e Anvisa: <a href="https://www.gov.br/saude" target="_blank" rel="noopener">gov.br/saude</a>, <a href="https://www.gov.br/anvisa" target="_blank" rel="noopener">gov.br/anvisa</a></li>
+      <li id="f1">Brasil. Lei nº 12.305/2010 (Política Nacional de Resíduos Sólidos). <a href="https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/lei/l12305.htm" target="_blank" rel="noopener">planalto.gov.br</a></li>
+      <li id="f2">ABREMA. Panorama dos Resíduos Sólidos no Brasil 2025 (ano-base 2024). <a href="https://www.abrema.org.br" target="_blank" rel="noopener">abrema.org.br</a>. Números divulgados em: <a href="https://movimentoeconomico.com.br/meio-ambiente/2025/12/08/producao-de-residuos-cresce-em-2024-e-destinacao-adequada-melhora/" target="_blank" rel="noopener">Movimento Econômico, 08/12/2025</a></li>
+      <li id="f3">ITU e UNITAR. The Global E-waste Monitor 2024. <a href="https://www.unitar.org/about/news-stories/press/global-e-waste-monitor-2024-electronic-waste-rising-five-times-faster-documented-e-waste-recycling" target="_blank" rel="noopener">unitar.org</a></li>
+      <li id="f4">Ministério da Saúde. Painel de Monitoramento das Arboviroses, dados de 2024 reproduzidos em: <a href="https://sbtnews.sbt.com.br/noticia/saude/brasil-encerra-2024-com-recorde-de-6-mil-mortes-por-dengue" target="_blank" rel="noopener">SBT News, 31/12/2024</a>. Informações gerais: <a href="https://www.gov.br/saude" target="_blank" rel="noopener">gov.br/saude</a></li>
+      <li id="f5">Sabesp (estimativa sobre óleo de cozinha), citada em: <a href="https://brasil61.com/n/agua-1-litro-de-oleo-pode-poluir-ate-25-mil-litros-de-agua-saiba-como-descartar-corretamente-bras2513672" target="_blank" rel="noopener">Brasil 61</a></li>
+      <li id="f6">Brasil. Decreto nº 10.388/2020 (logística reversa de medicamentos domiciliares). <a href="https://legis.senado.leg.br/norma/32242999/publicacao/32243981" target="_blank" rel="noopener">legis.senado.leg.br</a></li>
+      <li id="f7">Conama. Resolução nº 401/2008 (pilhas e baterias). Informações sobre logística reversa: <a href="https://sinir.gov.br" target="_blank" rel="noopener">sinir.gov.br</a></li>
+      <li id="f8">Reciclus. Logística reversa de lâmpadas (busca de pontos por CEP). <a href="https://www.reciclus.org.br" target="_blank" rel="noopener">reciclus.org.br</a></li>
+      <li id="f9">Green Eletron. Gestora de logística reversa de eletroeletrônicos e pilhas. <a href="https://greeneletron.org.br" target="_blank" rel="noopener">greeneletron.org.br</a></li>
+      <li id="f10">ONU Brasil. ODS 11 e ODS 12. <a href="https://brasil.un.org/pt-br/sdgs/11" target="_blank" rel="noopener">ODS 11</a> · <a href="https://brasil.un.org/pt-br/sdgs/12" target="_blank" rel="noopener">ODS 12</a></li>
     </ol>
     <div class="proximo"><a class="btn" href="index.html">Buscar um ponto de coleta</a></div>
   </div></main>
