@@ -50,7 +50,7 @@ if (form) {
   const selMaterial = document.getElementById("material");
   const inp = document.getElementById("bairro"), lista = document.getElementById("bairro-lista"), msg = document.getElementById("bairro-msg");
   const resultado = document.getElementById("resultado");
-  for (const [k, m] of Object.entries(MATERIAIS)) selMaterial.add(new Option(`${m.icone} ${m.nome}`, k));
+  for (const [k, m] of Object.entries(MATERIAIS)) selMaterial.add(new Option(`${m.nome}`, k));
 
   /* --- Campo de bairro com pesquisa (ignora acentos e maiúsculas, acha em qualquer parte do nome) --- */
   const norm = (s) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
