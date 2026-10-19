@@ -7,13 +7,13 @@
    ============================================================ */
 
 const MATERIAIS = {
-  pilhas:      { nome: "Pilhas e baterias", icone: "🔋", dica: "Guarde em um pote fechado até levar ao ponto." },
-  eletronicos: { nome: "Eletrônicos",       icone: "💻", dica: "Leve inteiro, sem desmontar, e apague seus dados." },
-  moveis:      { nome: "Móveis e entulho",  icone: "🛋️", dica: "Nunca deixe na calçada ou em terrenos." },
-  oleo:        { nome: "Óleo de cozinha",   icone: "🫙", dica: "Coe e guarde em garrafa PET fechada. Nunca jogue na pia." },
-  reciclaveis: { nome: "Recicláveis",       icone: "♻️", dica: "Entregue limpos e secos." },
-  remedios:    { nome: "Remédios vencidos", icone: "💊", dica: "Nunca jogue no lixo ou no vaso. Leve a um ponto de coleta, como farmácias e unidades de saúde." },
-  lampadas:    { nome: "Lâmpadas",          icone: "💡", dica: "Fluorescentes têm mercúrio. Não quebre: leve inteira, na embalagem, ao ponto de coleta." }
+  pilhas:      { nome: "Pilhas e baterias",  dica: "Guarde em um pote fechado até levar ao ponto." },
+  eletronicos: { nome: "Eletrônicos",        dica: "Leve inteiro, sem desmontar, e apague seus dados." },
+  moveis:      { nome: "Móveis e entulho",   dica: "Nunca deixe na calçada ou em terrenos." },
+  oleo:        { nome: "Óleo de cozinha",    dica: "Coe e guarde em garrafa PET fechada. Nunca jogue na pia." },
+  reciclaveis: { nome: "Recicláveis",        dica: "Entregue limpos e secos." },
+  remedios:    { nome: "Remédios vencidos",  dica: "Nunca jogue no lixo ou no vaso. Leve a um ponto de coleta, como farmácias e unidades de saúde." },
+  lampadas:    { nome: "Lâmpadas",           dica: "Fluorescentes têm mercúrio. Não quebre: leve inteira, na embalagem, ao ponto de coleta." }
 };
 
 const BAIRROS = {
