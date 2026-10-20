@@ -284,19 +284,23 @@ form .btn{
    background:#fff;
    border-radius:var(--raio);
    padding:18px;
-   display:flex;
+   display:grid;
+   grid-template-columns:48px 1fr;
+   column-gap:16px;
+   row-gap:12px;
    align-items:center;
-   gap:14px;
 }
 
 
 .tema .ico{
-   font-size:1.8rem;
+   width:48px;
+   height:48px;
+   object-fit:contain;
 }
 
 
 .tema div{
-   flex:1;
+   min-width:0;
 }
 
 
@@ -307,8 +311,11 @@ form .btn{
 
 
 .tema a{
-   white-space:nowrap;
+   grid-column:1 / -1;
    font-weight:700;
+   display:inline-flex;
+   align-items:center;
+   min-height:44px;
 }
 
 
@@ -406,10 +413,6 @@ footer a{
 
    nav ul.aberto{
       display:flex;
-   }
-
-   .tema{
-      flex-wrap:wrap;
    }
 
 }
@@ -716,10 +719,6 @@ footer a{
 
    .marca span{
       font-size:1.05rem;
-   }
-
-   .tema a{
-      width:100%;
    }
 
 }
@@ -1145,8 +1144,18 @@ input[type=text]{
 
 
 /* Ícones dos cards "Por que descartar certo?" */
-.tema img.ico{
-   width:48px;
-   height:48px;
-   flex:none;
+
+
+/* Cards "Por que descartar certo?": no computador o link fica na direita */
+@media(min-width:720px){
+
+   .tema{
+      grid-template-columns:48px 1fr auto;
+   }
+
+   .tema a{
+      grid-column:auto;
+      white-space:nowrap;
+   }
+
 }

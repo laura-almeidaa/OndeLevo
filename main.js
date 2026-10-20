@@ -5,7 +5,7 @@ const atual = location.pathname.split("/").pop() || "index.html";
 document.body.insertAdjacentHTML("afterbegin", '<a class="pular" href="#conteudo">Pular para o conteúdo</a>');
 const topo = document.getElementById("topo");
 if (topo) topo.innerHTML = `<div class="wrap">
-  <a class="marca" href="index.html"><img class="logo-nav" src="img/logo-onde-levo-sembg.png" alt=""><span>Onde Levo?</span></a>
+  <a class="marca" href="index.html"><img class="logo-nav" src="img/logo-onde-levo.png" alt=""><span>Onde Levo?</span></a>
   <button id="menu-toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">Menu</button>
   <nav aria-label="Principal"><ul id="menu">${PAGINAS.map(([h,t]) =>
     `<li><a href="${h}" ${h===atual?'aria-current="page"':""}>${t}</a></li>`).join("")}</ul></nav></div>`;
@@ -15,7 +15,7 @@ if (rodape) rodape.innerHTML = `<div class="wrap rod-wrap"><div class="rod-grade
     <div class="rod-col rod-parceria">
       <h2>uma colaboração entre</h2>
       <div class="logos">
-        <img src="img/logo-onde-levo-sembg.png" alt="Logo do projeto Onde Levo?">
+        <img src="img/logo-onde-levo.png" alt="Logo do projeto Onde Levo?">
         <img src="img/logo-instituto-kaio-martins.jpg" alt="Logo do Instituto Kaio Martins">
         <img src="img/logo-coopaa.jpg" alt="Logo da COOPAA">
       </div>
