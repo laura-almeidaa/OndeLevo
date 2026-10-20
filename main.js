@@ -5,8 +5,8 @@ const atual = location.pathname.split("/").pop() || "index.html";
 document.body.insertAdjacentHTML("afterbegin", '<a class="pular" href="#conteudo">Pular para o conteúdo</a>');
 const topo = document.getElementById("topo");
 if (topo) topo.innerHTML = `<div class="wrap">
-  <a class="marca" href="index.html"><img class="logo-nav" src="img/logo-onde-levo-sembg.png" alt=""><span>Onde Levo?</span></a>
-  <button id="menu-toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">☰</button>
+  <a class="marca" href="index.html"><img class="logo-nav" src="img/logo-onde-levo.png" alt=""><span>Onde Levo?</span></a>
+  <button id="menu-toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">Menu</button>
   <nav aria-label="Principal"><ul id="menu">${PAGINAS.map(([h,t]) =>
     `<li><a href="${h}" ${h===atual?'aria-current="page"':""}>${t}</a></li>`).join("")}</ul></nav></div>`;
 
@@ -50,7 +50,7 @@ if (form) {
   const selMaterial = document.getElementById("material");
   const inp = document.getElementById("bairro"), lista = document.getElementById("bairro-lista"), msg = document.getElementById("bairro-msg");
   const resultado = document.getElementById("resultado");
-  for (const [k, m] of Object.entries(MATERIAIS)) selMaterial.add(new Option(`${m.nome}`, k));
+  for (const [k, m] of Object.entries(MATERIAIS)) selMaterial.add(new Option(m.nome, k));
 
   /* --- Campo de bairro com pesquisa (ignora acentos e maiúsculas, acha em qualquer parte do nome) --- */
   const norm = (s) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
@@ -85,8 +85,8 @@ if (form) {
 
   /* --- Resultado --- */
   const atende = (p, b) => p.bairros === "todos" || p.bairros.includes(b);
-  const cartao = (p) => `<article class="ponto"><h3>📍 ${p.nome}</h3>
-    ${p.endereco ? `<p>${p.endereco}</p>` : ""}<p>🕒 ${p.horario}</p>
+  const cartao = (p) => `<article class="ponto"><h3>${p.nome}</h3>
+    ${p.endereco ? `<p>${p.endereco}</p>` : ""}<p><strong>Horário:</strong> ${p.horario}</p>
     ${p.iframe ? `<div class="mapa">${p.iframe}</div>` : ""}</article>`;
   const OFICIAIS = {
     pilhas: ["Green Eletron", "https://greeneletron.org.br"],

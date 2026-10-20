@@ -499,7 +499,7 @@ select, .btn{
 
 
 .foto.sem-foto::before{
-   content:"📷 Foto: " attr(data-desc);
+   content:"Foto: " attr(data-desc);
    display:block;
    padding:40px 16px;
    text-align:center;
@@ -1074,11 +1074,15 @@ input[type=text]{
 
 
 .checklist li::before{
-   content:"✔";
+   content:"";
    position:absolute;
-   left:16px;
-   color:var(--folha);
-   font-weight:700;
+   left:18px;
+   top:.95em;
+   width:6px;
+   height:12px;
+   border:solid var(--folha);
+   border-width:0 3px 3px 0;
+   transform:rotate(45deg);
 }
 
 
