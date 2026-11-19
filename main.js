@@ -17,7 +17,7 @@ if (rodape) rodape.innerHTML = `<div class="wrap rod-wrap"><div class="rod-grade
       <div class="logos">
         <img src="img/logo-onde-levo.png" alt="Logo do projeto Onde Levo?">
         <img src="img/logo-instituto-kaio-martins.jpg" alt="Logo do Instituto Kaio Martins">
-        <img src="img/logo-coopaa.jpg" alt="Logo da COOPAA">
+        
       </div>
     </div>
     <div class="rod-col rod-info">
